@@ -17,6 +17,9 @@ pre-commit = "^3.8.0"
 ruff = "^0.5.5"
 
 
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.8.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -26,6 +29,7 @@ line-length = 120
 indent-width = 4
 target-version = "py312"
 
+[tool.ruff.lint]
 select = [
     "E", # pycodestyle
     "F", # Pyflakes

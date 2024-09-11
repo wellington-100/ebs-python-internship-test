@@ -14,3 +14,6 @@ class Blog(models.Model):
     body = models.TextField()
     posted = models.DateField(db_index=True, auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    # Milestone 1, task 1
+    enabled = models.BooleanField(default=False)
