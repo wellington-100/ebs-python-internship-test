@@ -29,7 +29,10 @@ class BlogItemView(GenericAPIView):
 
     def get(self, request: Request, pk: int) -> Response:
         blog: Blog = get_object_or_404(Blog.objects.all(), pk=pk)
-        return Response(self.get_serializer(blog).data)
+        # Milestone 1, task 7
+        comments = Comments.objects.filter(blog=blog)
+        data = {"blog": self.get_serializer(blog).data, "comments": CommentsSerializer(comments, many=True).data}
+        return Response(data)
 
 
 # Milestone 1, task 3
