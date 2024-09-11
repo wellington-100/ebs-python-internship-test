@@ -17,3 +17,9 @@ class Blog(models.Model):
 
     # Milestone 1, task 1
     enabled = models.BooleanField(default=False)
+
+
+# Milestone 1, task 4
+class Comments(models.Model):
+    text = models.TextField()
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
