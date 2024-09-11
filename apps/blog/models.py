@@ -23,3 +23,4 @@ class Blog(models.Model):
 class Comments(models.Model):
     text = models.TextField()
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    created_at = models.DateField(db_index=True, auto_now_add=True)
